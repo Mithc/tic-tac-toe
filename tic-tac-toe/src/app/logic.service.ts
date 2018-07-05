@@ -11,7 +11,7 @@ export class LogicService {
     this.random1 = Math.floor(Math.random()*matrix.length);
     this.random2 = Math.floor(Math.random()*matrix[0].length);
     if(matrix[this.random1][this.random2] === null) {
-      matrix[this.random1][this.random2] = "0"
+      matrix[this.random1][this.random2] = "computer"
     }
     else {
       this.computerPlay(matrix)

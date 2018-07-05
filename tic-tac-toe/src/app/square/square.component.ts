@@ -6,10 +6,10 @@ import {Component, Input, OnInit} from '@angular/core';
     {{state}}
   `,
   styles: [`
-      :host{    
+      :host {
           width: 45px;
           height: 45px;
-          border: 1px solid green;
+          border: 1px solid #000000;
           border-collapse: collapse;
           text-align: center;
       }`]
