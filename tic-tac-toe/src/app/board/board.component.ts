@@ -7,7 +7,7 @@ import {LogicService} from "../logic.service";
       <div class="board">
           <div class="header">
               <button class="restart-button" (click)="restart()">Restart Game</button>
-              <p>{{ win ? win.toUpperCase() : null}}</p>
+              <p>Status: {{ win ? win.toUpperCase() : status}}</p>
           </div>
           <div class="row" *ngFor="let boardRow of matrix; let row = index">
               <app-square *ngFor="let box of boardRow; let col = index;"
@@ -29,6 +29,7 @@ import {LogicService} from "../logic.service";
           background: none;
           font-size: 20px;
           border: 1px solid black;
+          padding: 5px 10px;
       }
 
       .player:after {
@@ -68,6 +69,7 @@ export class BoardComponent implements OnInit {
   private player: string;
   public matrix: Array<Array<number | string>>;
   private win: string;
+  public status = "The game is on"
 
   constructor(private logicService: LogicService) {
     this.boardHeight = Math.floor((document.documentElement.clientWidth - 100) / 47) < 5 ? 5 : Math.floor((document.documentElement.clientWidth - 30) / 47);
